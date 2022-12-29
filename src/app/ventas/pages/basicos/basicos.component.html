@@ -1,4 +1,93 @@
-<p>basicos works!</p>
+
+<div class="tex-layout  text-white">
+    <h1>Pipes Basicos</h1>
+
+    <p>
+        Pipes inculidos en Angular - Uualmente en el common Module
+    </p>
+    
+</div>
 
 
-<div class="tex-layout"></div>
+<div class="grid">
+    <div class="col-4 "> 
+        <p-card header="uppercase" [subheader]="nombreLower | uppercase">
+            {{nombreLower }}
+        </p-card>
+    </div>
+    <div class="col-4">
+        
+        <p-card header="lowercase" [subheader]="nombreUpper | lowercase">
+            {{nombreUpper}}
+        </p-card>
+
+    </div>
+    <div class="col-4">
+        
+        <p-card header="titelcase" [subheader]="nombreCompleto | titlecase">
+            {{nombreCompleto}}
+        </p-card>
+
+    </div>
+</div>
+
+
+<div class="tex-layout  text-white">
+    <h1>Date | fecha | pipes </h1>
+
+    <p>
+        Pipes patra mostrar la fecha
+    </p>
+    
+</div>
+
+<div class="grid">
+
+    <div class="col-6 "> 
+        <p-card >
+
+           <ul>
+                <li> fecha </li>
+                <li> fecha | date</li>
+                <li> fecha | date: 'short'</li>
+                <li> fecha | date: 'long' </li>
+                <li> fecha | date: 'cccc dd MMMM, YYYY' </li>
+                
+
+            </ul>
+
+            <hr>
+
+            <ul>
+                <li> fecha | date: 'long':'GMT-6' </li>
+                <li> fecha | date: 'long':'GMT-4' </li>
+                <li> fecha | date: 'long':'':'en' </li> 
+            </ul>
+
+        </p-card>
+    </div>
+    <div class="col-6 "> 
+        <p-card >
+
+           <ul>
+                <li> {{fecha}} </li>
+                <li> {{fecha | date}} </li>
+                <li> {{fecha | date: 'short' }} </li>
+                <li> {{fecha | date: 'long' }} </li>
+                <li> {{fecha | date: 'cccc dd MMMM, YYYY' }} </li>
+            </ul>
+
+            <hr>
+
+            <ul>
+                <li>{{fecha | date: 'long':'GMT-6':'es-CL' }}</li>  <!-- aqui se usaria (es-CL) esto porque tenermos impotada español vercion chile -->
+                <li>{{fecha | date: 'long':'GMT-4' }}</li>
+                <li>{{fecha | date: 'long':'':'en' }}</li> <!-- aqui (en) esta diciendo que el dato se entregue en ingles y este idioma esta 
+                                                            por defecto pero si quieramos otro idioma tendriamos crear su importacion en el app.module.ts general  -->
+
+            </ul>
+            
+        </p-card>
+    </div>
+    
+</div>

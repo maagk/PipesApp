@@ -1,1 +1,66 @@
-<p>ordenar works!</p>
+
+<div class="text-layout">
+    <h1> Pipes Personalizados  </h1>
+    <p> 
+        Pipes crados por {{'nosotros' | mayusculas: enMayusculas  }} 
+
+    </p>
+        
+    <button pButton label="toggle Mayusculas" (click)="valor()">
+        
+    </button>
+</div>
+
+<p-toolbar>
+    <div class="p-toolbar-group-left">
+
+    </div>
+    
+    <div class="p-toolbar-group-right">
+
+        <button pButton
+                 label="toggle Mayusculas" 
+                 class="mr-1 p-button-warning" 
+                 (click)="valor()">
+        </button>
+
+        <button pButton 
+                icon="pi pi-sort" 
+                label="Por nombre" 
+                class="mr-1">
+        </button>
+        <button pButton 
+                icon="pi pi-sort" 
+                label="Valores"
+                class="mr-1 p-button-success">
+        </button>
+        <button pButton 
+                icon="pi pi-sort" 
+                label="Por color"
+                class="mr-1 p-button-help">
+        </button>
+    </div>
+</p-toolbar>
+
+<div class="grid">
+    <div class="col mt-2">
+        <p-table [value]=[]>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Vin</th>
+                    <th>Year</th>
+                    <th>Brand</th>
+                    <th>Color</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-car>
+                <tr>
+                    <td>{{car.vin}}</td>
+                    <td>{{car.year}}</td>
+                    <td>{{car.brand}}</td>
+                    <td>{{car.color}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
