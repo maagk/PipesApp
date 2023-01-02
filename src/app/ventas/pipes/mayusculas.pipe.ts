@@ -21,8 +21,6 @@ export class MayusculasPipe implements PipeTransform {
         // si (enMayusculas) esta en true entonces value.toUper.... (:) csaso contrarios value.toLower...
         return ( enMayusculas ) ? value.toUpperCase() : value.toLowerCase();
 
-       
-
     }
 
 }
